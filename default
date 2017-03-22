@@ -33,7 +33,7 @@ KERNEL /images/esxi65a/mboot.c32
 APPEND -c /images/esxi65a/boot.cfg ks=http://10.5.0.4/tftp/kickstart/whitebox65.cfg
 MENU LABEL ESXi-6.5 on White Box Server ^Installer
 
-LABEL Install ESXi-6.5 on White Box Server
+LABEL Install ESXi-6.5 on Blade Server
 KERNEL /images/esxi65a/mboot.c32
 APPEND -c /images/esxi65a/boot.cfg ks=http://10.5.0.4/tftp/kickstart/blade65.cfg
-MENU LABEL ESXi-6.5 on White Box Server ^Installer
+MENU LABEL ESXi-6.5 on Blade Server ^Installer
