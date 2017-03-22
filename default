@@ -1,0 +1,39 @@
+#DEFAULT install
+#NOHALT 1
+#LABEL install
+#  KERNEL esxi60u2/mboot.c32
+#  APPEND -c esxi60u2/boot.cfg
+#  IPAPPEND 2
+
+
+#Content of default
+
+DEFAULT menu.c32
+MENU TITLE VMWware ESXi Installer Boot Menu
+NOHALT 1
+PROMPT 0
+TIMEOUT 80
+
+LABEL Install ESXi-6.0U2 on White Box Server
+KERNEL /images/esxi60u2/mboot.c32
+APPEND -c /images/esxi60u2/boot.cfg ks=http://10.5.0.4/tftp/kickstart/whitebox60.cfg
+MENU LABEL ESXi-6.0U2 on White Box Server ^Installer
+
+LABEL Install ESXi-6.0U2 on Blade Server
+KERNEL /images/esxi60u2/mboot.c32
+APPEND -c /images/esxi60u2/boot.cfg ks=http://10.5.0.4/tftp/kickstart/blade60.cfg
+MENU LABEL ESXi-6.0U2 on Blade Server ^Installer
+
+LABEL Install ESXi-6.5 on White Box Server
+KERNEL /images/esxi65a/mboot.c32
+APPEND -c /images/esxi65a/boot.cfg ks=http://10.5.0.4/tftp/kickstart/whitebox65.cfg
+MENU LABEL ESXi-6.5 on White Box Server ^Installer
+
+LABEL Install ESXi-6.5 on White Box Server
+KERNEL /images/esxi65a/mboot.c32
+APPEND -c /images/esxi65a/boot.cfg ks=http://10.5.0.4/tftp/kickstart/blade65.cfg
+MENU LABEL ESXi-6.5 on White Box Server ^Installer
+
+LABEL hddboot
+LOCALBOOT 0x80
+MENU LABEL ^Boot from local disk
