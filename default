@@ -14,6 +14,10 @@ NOHALT 1
 PROMPT 0
 TIMEOUT 80
 
+LABEL hddboot
+LOCALBOOT 0x80
+MENU LABEL ^Boot from local disk
+
 LABEL Install ESXi-6.0U2 on White Box Server
 KERNEL /images/esxi60u2/mboot.c32
 APPEND -c /images/esxi60u2/boot.cfg ks=http://10.5.0.4/tftp/kickstart/whitebox60.cfg
@@ -33,7 +37,3 @@ LABEL Install ESXi-6.5 on White Box Server
 KERNEL /images/esxi65a/mboot.c32
 APPEND -c /images/esxi65a/boot.cfg ks=http://10.5.0.4/tftp/kickstart/blade65.cfg
 MENU LABEL ESXi-6.5 on White Box Server ^Installer
-
-LABEL hddboot
-LOCALBOOT 0x80
-MENU LABEL ^Boot from local disk
